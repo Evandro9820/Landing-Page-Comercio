@@ -5,18 +5,17 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-black p-4">
+    <nav className="bg-gray-900  p-4  shadow-lg">
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex items-center space-x-4">
           <div className="text-white text-lg font-bold flex items-center space-x-2">
-            {/* Adicione o logotipo aqui se necessário */}
             <span>DARK SERVICES</span>
           </div>
         </div>
 
         {/* Menu para desktop */}
         <ul className="hidden md:flex space-x-4">
-          {["Inicio", "Serviços", "Sobre Mim", "Depoimentos"].map(
+          {["Inicio", "Planos","Depoimentos","Sobre Mim"].map(
             (item, idx) => (
               <li key={idx}>
                 <a
