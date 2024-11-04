@@ -5,6 +5,8 @@ import Servico from "./components/Section-Servicos";
 import Depoimentos_section from "./components/Section-Depoimentos";
 import Preco_Section from "./components/Section-Preco";
 import SobreMim_Section from "./components/SobreMim-Section";
+import Contato from "./components/Section-Contato";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -13,8 +15,10 @@ function App() {
       <Main />
       <Servico />
       <Depoimentos_section />
-      <Preco_Section /> 
+      <Preco_Section />
       <SobreMim_Section />
+      <Contato />
+      <Footer />
     </div>
   );
 }
