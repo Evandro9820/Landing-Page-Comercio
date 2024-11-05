@@ -1,5 +1,6 @@
 import { useState } from "react";
-
+import { collection, addDoc } from "firebase/firestore";
+import db from "../../Firebase";
 function ContactSection() {
   const [formData, setFormData] = useState({
     name: "",
@@ -12,21 +13,34 @@ function ContactSection() {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Aqui você pode implementar a lógica para enviar os dados do formulário
-    console.log("Dados do formulário: ", formData);
-    // Limpar o formulário após o envio (opcional)
-    setFormData({ name: "", email: "", message: "" });
+
+    try {
+      await addDoc(collection(db, "contacts"), formData);
+      console.log("Dados enviados com sucesso!", formData);
+
+      setFormData({ name: "", email: "", message: "" });
+    } catch (error) {
+      console.error("Erro ao enviar dados: ", error);
+    }
   };
 
   return (
     <section className="bg-gray-900 py-12" id="contato">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-white text-center mb-8">Contato</h2>
-        <form onSubmit={handleSubmit} className="max-w-lg mx-auto bg-gray-800 p-6 rounded-lg shadow-md">
+        <h2 className="text-3xl font-bold text-white text-center mb-8">
+          Contato
+        </h2>
+        <form
+          onSubmit={handleSubmit}
+          className="max-w-lg mx-auto bg-gray-800 p-6 rounded-lg shadow-md"
+        >
           <div className="mb-4">
-            <label className="block text-white text-sm font-bold mb-2" htmlFor="name">
+            <label
+              className="block text-white text-sm font-bold mb-2"
+              htmlFor="name"
+            >
               Nome
             </label>
             <input
@@ -40,7 +54,10 @@ function ContactSection() {
             />
           </div>
           <div className="mb-4">
-            <label className="block text-white text-sm font-bold mb-2" htmlFor="email">
+            <label
+              className="block text-white text-sm font-bold mb-2"
+              htmlFor="email"
+            >
               Email
             </label>
             <input
@@ -54,7 +71,10 @@ function ContactSection() {
             />
           </div>
           <div className="mb-4">
-            <label className="block text-white text-sm font-bold mb-2" htmlFor="message">
+            <label
+              className="block text-white text-sm font-bold mb-2"
+              htmlFor="message"
+            >
               Mensagem
             </label>
             <textarea
