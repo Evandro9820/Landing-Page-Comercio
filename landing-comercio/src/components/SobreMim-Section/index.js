@@ -17,7 +17,7 @@ function AboutMeSection() {
         <div className="flex flex-col items-center md:items-start text-center md:text-left w-full md:w-2/3">
           <h2 className="text-3xl font-bold text-white mb-4">Sobre Mim</h2>
           <p className="text-lg text-gray-300 mb-4">
-            Olá! Meu nome é [Seu Nome], e eu sou um especialista em elojob com
+            Olá! Meu nome é dark_9820, e eu sou um especialista em elojob com
             anos de experiência em jogos competitivos. Minha missão é ajudar
             jogadores a atingirem seu potencial máximo com dedicação e um
             atendimento personalizado.

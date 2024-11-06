@@ -40,7 +40,7 @@ const Navbar = () => {
         {/* CTA Button Only */}
         <div className="hidden md:flex items-center space-x-4">
           <a
-            href="#"
+            href="https://ggmax.com.br/"
             className="ml-2 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition duration-200"
           >
             Comece Agora
