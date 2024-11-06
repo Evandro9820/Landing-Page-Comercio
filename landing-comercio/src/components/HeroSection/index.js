@@ -1,4 +1,4 @@
-import HeroImage from "../../assets/HeroSction_image.jpeg"; // Altere para uma imagem relevante de gaming ou elojob
+import HeroImage from "../../assets/HeroSection_image.jpeg"; // Altere para uma imagem relevante de gaming ou elojob
 
 function HeroSection() {
   return (

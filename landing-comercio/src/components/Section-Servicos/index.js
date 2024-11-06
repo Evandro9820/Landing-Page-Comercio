@@ -1,24 +1,28 @@
-import { AcademicCapIcon, RocketLaunchIcon, TrophyIcon } from "@heroicons/react/24/solid";
+import {
+  RocketLaunchIcon,
+  TrophyIcon,
+  ShieldCheckIcon,
+} from "@heroicons/react/24/solid";
 
 function ServicesSection() {
   const services = [
     {
       icon: <RocketLaunchIcon className="h-10 w-10 text-blue-400" />,
-      title: "Boost de Elo",
+      title: "Boost de Elo Rápido",
       description:
-        "Suba de ranking rapidamente com a ajuda de jogadores profissionais.",
+        "Com o elojob, jogadores profissionais ajudam você a alcançar o ranking desejado de maneira rápida e segura.",
     },
     {
       icon: <TrophyIcon className="h-10 w-10 text-blue-400" />,
-      title: "Coaching Personalizado",
+      title: "Melhore Seu Ranking",
       description:
-        "Aprimore suas habilidades com sessões de coaching adaptadas ao seu estilo.",
+        "Suba nas classificações dos jogos mais populares, como Honor of Kings e Mobile Legends, e alcance novos patamares no jogo.",
     },
     {
-      icon: <AcademicCapIcon className="h-10 w-10 text-blue-400" />,
-      title: "Consultoria de Jogo",
+      icon: <ShieldCheckIcon className="h-10 w-10 text-blue-400" />,
+      title: "Segurança e Confidencialidade",
       description:
-        "Receba orientações estratégicas para alcançar melhores resultados.",
+        "Garantimos segurança total em nossos serviços de elojob, com métodos profissionais para manter sua conta protegida.",
     },
   ];
 
@@ -27,7 +31,9 @@ function ServicesSection() {
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-3xl font-bold text-white mb-4">Nossos Serviços</h2>
         <p className="text-lg text-gray-400 mb-8">
-          Oferecemos uma variedade de serviços para melhorar sua experiência no jogo e ajudá-lo a alcançar o próximo nível.
+          Oferecemos serviços de elojob para os principais jogos MOBA como Honor
+          of Kings e Mobile Legends. Conquiste o ranking dos seus sonhos com
+          profissionais qualificados.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {services.map((service, idx) => (

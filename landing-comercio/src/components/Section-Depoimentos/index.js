@@ -2,21 +2,21 @@ function Depoimentos_section() {
   const testimonials = [
     {
       quote:
-        "Serviço incrível! Minha classificação subiu mais rápido do que eu esperava. Profissionalismo e competência totais!",
+        "Serviço incrível! Minha classificação subiu mais rápido do que eu esperava. Profissionais confiáveis e muito atenciosos!",
       author: "Lucas M.",
       role: "Cliente satisfeito",
     },
     {
       quote:
-        "Foi uma ótima experiência. O serviço de coaching me ajudou a melhorar minhas habilidades. Recomendo a todos!",
+        "Excelente experiência! Consegui alcançar meu elo desejado sem complicações e de maneira segura. Recomendo a todos!",
       author: "Carla S.",
-      role: "Jogadora",
+      role: "Gamer",
     },
     {
       quote:
-        "Eu não imaginava que pudesse subir de elo tão rápido. Serviço seguro e confiável!",
+        "Eu não imaginava que pudesse subir de elo tão rápido e de forma tão segura. Serviço confiável e super eficiente!",
       author: "Bruno F.",
-      role: "Gamer",
+      role: "Jogador",
     },
   ];
 
