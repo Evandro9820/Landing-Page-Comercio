@@ -1,12 +1,15 @@
 import { useState } from "react";
 import { collection, addDoc } from "firebase/firestore";
 import db from "../../Firebase";
+
 function ContactSection() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
+  const [modalMessage, setModalMessage] = useState(null); // Estado para mensagens de modal
+  const [isModalVisible, setIsModalVisible] = useState(false); // Controle da visibilidade da modal
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -18,12 +21,19 @@ function ContactSection() {
 
     try {
       await addDoc(collection(db, "contacts"), formData);
-      console.log("Dados enviados com sucesso!", formData);
-
+      setModalMessage("Mensagem enviada com sucesso!");
+      setIsModalVisible(true); // Exibe a modal de sucesso
       setFormData({ name: "", email: "", message: "" });
     } catch (error) {
+      setModalMessage("Erro ao enviar a mensagem. Tente novamente.");
+      setIsModalVisible(true); // Exibe a modal de erro
       console.error("Erro ao enviar dados: ", error);
     }
+  };
+
+  const closeModal = () => {
+    setIsModalVisible(false); // Fecha a modal
+    setModalMessage(null); // Limpa a mensagem da modal
   };
 
   return (
@@ -32,6 +42,8 @@ function ContactSection() {
         <h2 className="text-3xl font-bold text-white text-center mb-8">
           Contato
         </h2>
+
+        {/* Formulário de Contato */}
         <form
           onSubmit={handleSubmit}
           className="max-w-lg mx-auto bg-gray-800 p-6 rounded-lg shadow-md"
@@ -95,6 +107,21 @@ function ContactSection() {
           </button>
         </form>
       </div>
+
+      {/* Modal de Confirmação */}
+      {isModalVisible && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-white p-6 rounded-lg shadow-lg text-center max-w-sm w-full">
+            <p className="text-gray-800 mb-4">{modalMessage}</p>
+            <button
+              onClick={closeModal}
+              className="bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-600 transition duration-200"
+            >
+              Fechar
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
